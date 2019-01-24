@@ -87,9 +87,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f699535761be29a4fb78a1a77bdd9791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinSpeed: 0.01
-  MaxSpeed: 0.1
+  MinSpeed: 0.5
+  MaxSpeed: 3
   MinTime: 2
   MaxTime: 7
-  TargetAlpha: 0.5
-  AppearTime: 1
+  TargetAlpha: 1
+  AppearTime: 0.25

@@ -26,7 +26,7 @@ public class RainDrop : MonoBehaviour
         _rectTransform = GetComponent<RectTransform>();
         _image = GetComponent<Image>();
 
-        _pos = new Vector2(Random.value, Random.value);
+        _pos = new Vector2(Random.value, Random.Range(0, 1.5f));
 
         _speed = Random.Range(MinSpeed, MaxSpeed);
 
