@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6244160784122021368}
   - component: {fileID: 2098154260}
   - component: {fileID: 8651899202848501897}
+  - component: {fileID: 4600323405185431968}
   m_Layer: 9
   m_Name: CartonBox
   m_TagString: Untagged
@@ -108,3 +109,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4600323405185431968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098154259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce7d216c19e4df64f8171ba42df4a953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
