@@ -62,4 +62,9 @@ public class FeelingsManager : MonoBehaviour
         Home.NextHomeLevel();
     }
 
+    public void SetHomeLevel(int homeLevel)
+    {
+        Home.SetHomeLevel();
+    }
+
 }

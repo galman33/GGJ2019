@@ -56,4 +56,9 @@ public class Home : MonoBehaviour
     {
         _levelTarget++;
     }
+
+    internal void SetHomeLevel(int homeLevel)
+    {
+        throw new NotImplementedException();
+    }
 }
