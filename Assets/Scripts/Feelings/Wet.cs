@@ -18,7 +18,7 @@ public class Wet : MonoBehaviour
     private void OnDisable()
     {
         RainDrops.SetActive(false);
-        RainScript.SetVolume(0.2f);
+        RainScript.SetVolume(0.1f);
     }
 
 }
