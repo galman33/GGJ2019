@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Warmer
   - HomeItem
+  - Base
   layers:
   - Default
   - TransparentFX
