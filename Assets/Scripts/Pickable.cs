@@ -50,6 +50,9 @@ public class Pickable : MonoBehaviour, IPointerDownHandler
       _rigidbody.velocity = Vector3.zero;
       _rigidbody.angularVelocity = Vector3.zero;
     }
+
+        if (!_rigidbody.isKinematic && _rigidbody.IsSleeping())
+            _rigidbody.isKinematic = true;
   }
 
   public void OnPointerDown(PointerEventData eventData)
