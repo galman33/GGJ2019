@@ -646,5 +646,15 @@ namespace UnityEngine.EventSystems
     {
       return m_CurrentFocusedGameObject;
     }
+
+    public GameObject GetCurrentHoveredGameObject()
+    {
+      var lastPointer = GetLastPointerEventData(kMouseLeftId);
+      if (lastPointer != null)
+      {
+        return lastPointer.pointerEnter;
+      }
+      return null;
+    }
   }
 }
