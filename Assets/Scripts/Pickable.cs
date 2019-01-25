@@ -10,7 +10,6 @@ public class Pickable : MonoBehaviour, IPointerDownHandler
   private Collider cameraCollider;
   private Rigidbody _rigidbody;
   private Collider _collider;
-  private Quaternion baseRotation;
   private float holdDistance = 2f;
   private float maxSize = 1f;
 
@@ -34,6 +33,13 @@ public class Pickable : MonoBehaviour, IPointerDownHandler
         _rigidbody.isKinematic = false;
         Physics.IgnoreCollision(_collider, cameraCollider, false);
       }
+      else
+      {
+        Vector3 newPose = cameraTransform.position + (cameraTransform.forward * holdDistance);
+        newPose.y = Mathf.Max(0.25f, newPose.y);
+        transform.position = newPose;
+        transform.rotation = Quaternion.Euler(0f, cameraTransform.eulerAngles.y, 0f);
+      }
     }
   }
 
@@ -43,10 +49,6 @@ public class Pickable : MonoBehaviour, IPointerDownHandler
     {
       _rigidbody.velocity = Vector3.zero;
       _rigidbody.angularVelocity = Vector3.zero;
-      Vector3 newPose = cameraTransform.position + (cameraTransform.forward * holdDistance);
-      newPose.y = Mathf.Max(0.25f, newPose.y);
-      _rigidbody.MovePosition(newPose);
-      _rigidbody.MoveRotation(baseRotation * cameraTransform.rotation);
     }
   }
 
@@ -57,6 +59,5 @@ public class Pickable : MonoBehaviour, IPointerDownHandler
     Physics.IgnoreCollision(_collider, cameraCollider, true);
     _rigidbody.useGravity = false;
     _rigidbody.isKinematic = true;
-    baseRotation = transform.rotation * Quaternion.Inverse(cameraTransform.rotation);
   }
 }
