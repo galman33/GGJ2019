@@ -5,9 +5,23 @@ using UnityEngine;
 public class FeelingsManager : MonoBehaviour
 {
 
+    public enum Feelings
+    {
+        Wet,
+        Cold,
+        Home
+    }
+
     public GameObject Wet;
     public GameObject Cold;
     public Home Home;
+
+    public Feelings Feeling { get; private set; }
+
+    private void Start()
+    {
+        StartWet();
+    }
 
     [ContextMenu("Stop All")]
     public void StopAll()
@@ -21,18 +35,24 @@ public class FeelingsManager : MonoBehaviour
     [ContextMenu("Start Wet")]
     public void StartWet()
     {
+        StopAll();
+        Feeling = Feelings.Wet;
         Wet.SetActive(true);
     }
 
     [ContextMenu("Start Cold")]
     public void StartCold()
     {
+        StopAll();
+        Feeling = Feelings.Cold;
         Cold.SetActive(true);
     }
 
     [ContextMenu("Start Home")]
     public void StartHome()
     {
+        StopAll();
+        Feeling = Feelings.Home;
         Home.gameObject.SetActive(true);
     }
 

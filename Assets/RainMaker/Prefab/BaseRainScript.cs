@@ -207,7 +207,7 @@ namespace DigitalRuby.RainMaker
             }
         }
 
-        protected virtual void Start()
+        protected virtual void Awake()
         {
 
 #if DEBUG
@@ -266,6 +266,8 @@ namespace DigitalRuby.RainMaker
                 }
                 rainRenderer.material = rainMistMaterial;
             }
+
+            CheckForRainChange();
         }
 
         protected virtual void Update()
