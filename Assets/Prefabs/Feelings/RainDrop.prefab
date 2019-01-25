@@ -92,4 +92,4 @@ MonoBehaviour:
   MinTime: 2
   MaxTime: 7
   TargetAlpha: 1
-  AppearTime: 0.25
+  AppearTime: 0.1

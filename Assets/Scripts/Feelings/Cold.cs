@@ -11,6 +11,16 @@ public class Cold : MonoBehaviour
     public float MinCoughDelta;
     public float MaxCoughDelta;
 
+    private void OnEnable()
+    {
+        FrostEffect.enabled = true;
+    }
+
+    private void OnDisable()
+    {
+        FrostEffect.enabled = false;
+    }
+
     IEnumerator Start()
     {
         while (true)
