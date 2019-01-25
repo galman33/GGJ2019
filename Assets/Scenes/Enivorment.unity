@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1318777064}
-  m_IndirectSpecularColor: {r: 0.00404012, g: 0.00022068918, b: 0.000000054687877,
+  m_IndirectSpecularColor: {r: 0.004040124, g: 0.00022068938, b: 0.000000054687877,
     a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -936,6 +936,10 @@ PrefabInstance:
     - target: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: field of view
       value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_RenderingPath
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
@@ -1944,7 +1948,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1708041560}
-  m_RootOrder: 84
+  m_RootOrder: 85
   m_LocalEulerAnglesHint: {x: 11.477, y: -69.864006, z: -7.4090004}
 --- !u!1001 &489838105
 PrefabInstance:
@@ -4499,6 +4503,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1010812396}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1133116424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    type: 3}
+  m_PrefabInstance: {fileID: 164111019}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1133116426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133116424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: d1ef901760cbd1540a675b812b40c43b, type: 2}
 --- !u!4 &1153483364 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1310400060572435755, guid: 44cc5bbee7da7bf4590861ebb77242ec,
@@ -7282,6 +7305,7 @@ Transform:
   - {fileID: 1890053592}
   - {fileID: 328243378}
   - {fileID: 60439405}
+  - {fileID: 1524236830}
   - {fileID: 1210667902}
   - {fileID: 1252146867}
   - {fileID: 1083037654}
