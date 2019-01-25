@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6963838586608847309}
   - component: {fileID: 4918897603210169647}
   - component: {fileID: 6699945072103012242}
+  - component: {fileID: 3435985033020077860}
   m_Layer: 9
   m_Name: Roof
   m_TagString: Untagged
@@ -109,3 +110,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3435985033020077860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848265326966820547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce7d216c19e4df64f8171ba42df4a953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
