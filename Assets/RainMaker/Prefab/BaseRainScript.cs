@@ -165,7 +165,7 @@ namespace DigitalRuby.RainMaker
                             audioSourceRainCurrent.Stop();
                         }
                         audioSourceRainCurrent = newSource;
-                        audioSourceRainCurrent.Play(1.0f);
+                        audioSourceRainCurrent.Play(0.1f);
                     }
                     if (RainFallParticleSystem != null)
                     {
@@ -313,7 +313,7 @@ namespace DigitalRuby.RainMaker
     public class LoopingAudioSource
     {
         public AudioSource AudioSource { get; private set; }
-        public float TargetVolume { get; private set; }
+        public float TargetVolume { get; set; }
 
         public LoopingAudioSource(MonoBehaviour script, AudioClip clip)
         {

@@ -68,5 +68,10 @@ namespace DigitalRuby.RainMaker
 
             UpdateRain();
         }
+
+        public void SetVolume(float volume)
+        {
+            audioSourceRainCurrent.TargetVolume = volume;
+        }
     }
 }
