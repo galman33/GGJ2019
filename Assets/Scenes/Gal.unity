@@ -354,7 +354,7 @@ MonoBehaviour:
   HomeMusic: {fileID: 270416483}
   Sun: {fileID: 601415301}
   MinVolume: 0
-  MaxVolume: 1
+  MaxVolume: 0.3
   MinSunAngle: -15
   MaxSunAngle: 10
   Levels: 3
