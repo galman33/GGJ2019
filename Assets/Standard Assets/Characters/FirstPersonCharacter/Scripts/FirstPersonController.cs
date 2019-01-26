@@ -10,6 +10,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
+    public static FirstPersonController instance;
+
         //#pragma warning disable CS0649
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
@@ -44,6 +46,26 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+    private bool init = false;
+
+    void Awake()
+    {
+      instance = this;
+    }
+
+    void OnEnable()
+    {
+      if (init)
+      {
+        m_MouseLook.SetCursorLock(true);
+      }
+    }
+
+    void OnDisable()
+    {
+      m_MouseLook.SetCursorLock(false);
+    }
+
         // Use this for initialization
         private void Start()
         {
@@ -57,6 +79,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+      init = true;
         }
 
 
