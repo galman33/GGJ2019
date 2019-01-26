@@ -46,6 +46,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+    private bool init = false;
+
     void Awake()
     {
       instance = this;
@@ -53,12 +55,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
     void OnEnable()
     {
-      Debug.LogError("FirstPersonController OnEnable");
+      if (init)
+      {
+        m_MouseLook.SetCursorLock(true);
+      }
     }
 
     void OnDisable()
     {
-      Debug.LogError("FirstPersonController OnDisable");
+      m_MouseLook.SetCursorLock(false);
     }
 
         // Use this for initialization
@@ -74,6 +79,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+      init = true;
         }
 
 

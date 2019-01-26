@@ -28,7 +28,6 @@ public class PauseScreen : MonoBehaviour
   public void ContinueGame()
   {
     pauseCanvas.SetActive(false);
-    UnityStandardAssets.Characters.FirstPerson.MouseLook.instance.SetCursorLock(true);
     UnityStandardAssets.Characters.FirstPerson.FirstPersonController.instance.enabled = true;
   }
 
