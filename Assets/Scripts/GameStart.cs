@@ -13,40 +13,44 @@ public class GameStart : MonoBehaviour
 
     private IEnumerator Start()
     {
-        float f = 1f;
-
-        Reticle.SetActive(false);
-
-        while (f >= 0)
+        if (!Application.isEditor)
         {
-            f -= Time.deltaTime;
-            Black.color = new Color(0, 0, 0, f);
-            yield return null;
-        } 
+            float f = 1f;
 
-        yield return new WaitForSeconds(3f);
+            Reticle.SetActive(false);
 
-        f = 0;
-        while (f <= 1)
-        {
-            f += Time.deltaTime;
-            Black.color = new Color(0, 0, 0, f);
-            yield return null;
-        } 
+            while (f >= 0)
+            {
+                f -= Time.deltaTime;
+                Black.color = new Color(0, 0, 0, f);
+                yield return null;
+            }
 
-        FirstPersonController.enabled = true;
-        FeelingsManager.Instance.StartCold();
-        Reticle.SetActive(true);
+            yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
 
-        f = 1;
-        while (f >= 0)
-        {
-            f -= Time.deltaTime;
-            Black.color = new Color(0, 0, 0, f);
-            yield return null;
+            FeelingsManager.Instance.StartCold();
+            //Cold.Instance.Go();
+
+
+            f = 0;
+            while (f <= 1)
+            {
+                f += Time.deltaTime * (1 / 3f);
+
+                Camera.main.fieldOfView = Mathf.Lerp(15, 50, 1 - ((1 - f) * (1 - f)));
+
+                yield return null;
+            }
+
+            FirstPersonController.enabled = true;
+            Reticle.SetActive(true);
         }
-
-        Black.color = new Color(0, 0, 0, 0);
+        else
+        {
+            FeelingsManager.Instance.StartCold();
+            FirstPersonController.enabled = true;
+            Camera.main.fieldOfView = 50;
+        }
     }
 
 

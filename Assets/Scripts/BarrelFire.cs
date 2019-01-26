@@ -6,7 +6,7 @@ public class BarrelFire : MonoBehaviour
 {
     private void OnEnable()
     {
-        FeelingsManager.Instance.StopAll();
+        Cold.Instance.Stop();
     }
 
 }
