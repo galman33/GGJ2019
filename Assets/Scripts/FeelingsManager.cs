@@ -5,6 +5,8 @@ using UnityEngine;
 public class FeelingsManager : MonoBehaviour
 {
 
+    public static FeelingsManager Instance;
+
     public enum Feelings
     {
         Wet,
@@ -18,9 +20,14 @@ public class FeelingsManager : MonoBehaviour
 
     public Feelings Feeling { get; private set; }
 
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
-        StartWet();
+        //StartCold();
     }
 
     [ContextMenu("Stop All")]

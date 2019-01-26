@@ -16,7 +16,7 @@ public class Pickable : MonoBehaviour, IPointerDownHandler
   private void Awake()
   {
     _rigidbody = GetComponent<Rigidbody>();
-    _collider = GetComponent<Collider>();
+    _collider = GetComponentInChildren<Collider>();
     var size = _collider.bounds.size;
     maxSize = Mathf.Max(size.x, Mathf.Max(size.y, size.z));
     holdDistance = maxSize * 2f;
