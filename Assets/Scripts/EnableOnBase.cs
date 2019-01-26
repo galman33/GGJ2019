@@ -11,7 +11,7 @@ public class EnableOnBase : MonoBehaviour
     {
         if(other.CompareTag("Base"))
         {
-            ToEnable.SetActive(true);
+            ToEnable?.SetActive(true);
         }
     }
 
@@ -19,7 +19,7 @@ public class EnableOnBase : MonoBehaviour
     {
         if (other.CompareTag("Base"))
         {
-            ToEnable.SetActive(false);
+            ToEnable?.SetActive(false);
         }
     }
 
