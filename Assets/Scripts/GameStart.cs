@@ -6,14 +6,25 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class GameStart : MonoBehaviour
 {
+  public static GameStart instance;
+
     public FirstPersonController FirstPersonController;
     public Image Black;
     public GameObject Reticle;
 
+  private void Awake()
+  {
+    instance = this;
+  }
 
-    private IEnumerator Start()
+  public void StartGame()
+  {
+    StartCoroutine(StartGameCoroutine());
+  }
+
+    private IEnumerator StartGameCoroutine()
     {
-        if (!Application.isEditor)
+        //if (Application.isEditor)
         {
             float f = 1f;
 
@@ -26,7 +37,8 @@ public class GameStart : MonoBehaviour
                 yield return null;
             }
 
-            yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+            //yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+            yield return new WaitForSeconds(2f);
 
             FeelingsManager.Instance.StartCold();
             //Cold.Instance.Go();
@@ -45,12 +57,12 @@ public class GameStart : MonoBehaviour
             FirstPersonController.enabled = true;
             Reticle.SetActive(true);
         }
-        else
+        /*else
         {
             FeelingsManager.Instance.StartCold();
             FirstPersonController.enabled = true;
             Camera.main.fieldOfView = 50;
-        }
+        }*/
     }
 
 
