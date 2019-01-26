@@ -49,7 +49,7 @@ public class GameStart : MonoBehaviour
             {
                 f += Time.deltaTime * (1 / 3f);
 
-                Camera.main.fieldOfView = Mathf.Lerp(15, 50, 1 - ((1 - f) * (1 - f)));
+                Camera.main.fieldOfView = Mathf.Lerp(15, 45, 1 - ((1 - f) * (1 - f)));
 
                 yield return null;
             }
