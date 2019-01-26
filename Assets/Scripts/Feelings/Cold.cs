@@ -51,7 +51,7 @@ public class Cold : MonoBehaviour
         FrostEffect.FrostAmount = 0;
         while (FrostEffect.FrostAmount < 0.425f)
         {
-            FrostEffect.FrostAmount += Time.deltaTime * (1 / 3f) * 0.425f;
+            FrostEffect.FrostAmount += Time.deltaTime * (1 / 15f) * 0.425f;
             yield return null;
         }
 
