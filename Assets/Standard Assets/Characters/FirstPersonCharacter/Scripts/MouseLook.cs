@@ -7,6 +7,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [Serializable]
     public class MouseLook
     {
+    public static MouseLook instance;
+
         public float XSensitivity = 2f;
         public float YSensitivity = 2f;
         public bool clampVerticalRotation = true;
@@ -23,6 +25,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         public void Init(Transform character, Transform camera)
         {
+      instance = this;
             m_CharacterTargetRot = character.localRotation;
             m_CameraTargetRot = camera.localRotation;
         }
@@ -57,11 +60,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         public void SetCursorLock(bool value)
         {
+      Debug.LogError("SetCursorLock " +value);
             lockCursor = value;
             if(!lockCursor)
             {//we force unlock the cursor if the user disable the cursor locking helper
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+        m_cursorIsLocked = false;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;        
+                Cursor.visible = false;
+        m_cursorIsLocked = true;
             }
         }
 
@@ -74,14 +85,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void InternalLockUpdate()
         {
+      Debug.LogError("InternalLockUpdate " + lockCursor + " " + m_cursorIsLocked);
             if(Input.GetKeyUp(KeyCode.Escape))
             {
                 m_cursorIsLocked = false;
             }
-            else if(Input.GetMouseButtonUp(0))
+            /*else if(Input.GetMouseButtonUp(0))
             {
                 m_cursorIsLocked = true;
-            }
+            }*/
 
             if (m_cursorIsLocked)
             {
