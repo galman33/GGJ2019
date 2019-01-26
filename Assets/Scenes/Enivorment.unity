@@ -1911,8 +1911,8 @@ Transform:
   - {fileID: 29908129}
   - {fileID: 1734101425}
   - {fileID: 308849736}
-  - {fileID: 1792623804}
   - {fileID: 1230134334}
+  - {fileID: 1792623804}
   - {fileID: 66804817}
   - {fileID: 9082645310352162071}
   - {fileID: 968017198}
@@ -2227,6 +2227,10 @@ PrefabInstance:
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_GravityMultiplier
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: field of view
