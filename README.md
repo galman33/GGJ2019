@@ -3,7 +3,7 @@
 
 Explore the city and build the house of your dreams
 
-###### Credits - Team
+### Credits - Team
 Shira Kazula Noy - Art , Modelling and sharking
 
 Nadav Hekselman - Art, Modelling, Enviroment, Project management and Fashion
@@ -16,7 +16,7 @@ Hajaly Atalla - Main Logo
 
 Alon Kaplan - Music and SFX
 
-###### Credits - Other Assets
+### Credits - Other Assets
 [Bach minuet In G](http://www.orangefreesounds.com/bach-minuet-in-g/)
 
 [TinyFire VFX 1.0](https://assetstore.unity.com/packages/vfx/particles/fire-explosions/tinyfire-vfx-1-0-97898)
